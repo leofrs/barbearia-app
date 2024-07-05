@@ -15,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
 import com.example.barber.ui.theme.BarberTheme
 import com.example.barber.views.HomeView
 
@@ -31,12 +32,29 @@ class MainActivity : ComponentActivity() {
                         .windowInsetsPadding(WindowInsets.statusBars),
 
                 ) { innerPadding ->
-                    HomeView(modifier = Modifier.padding(innerPadding))
+                    AppNavHost(
+                        modifier = Modifier.padding(innerPadding),
+                        navController = rememberNavController()
+                    )
                 }
             }
         }
     }
 }
 
+@Preview(showBackground = true)
+@Composable
+fun AppPreview() {
+    Scaffold(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = androidx.compose.ui.graphics.Color.Blue)
+            .windowInsetsPadding(WindowInsets.statusBars),
 
-
+        ) { innerPadding ->
+        AppNavHost(
+            modifier = Modifier.padding(innerPadding),
+            navController = rememberNavController()
+        )
+    }
+}

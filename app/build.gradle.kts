@@ -50,6 +50,8 @@ android {
 }
 
 dependencies {
+    // System of navigation Jetpack Compose
+    implementation (libs.androidx.navigation.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

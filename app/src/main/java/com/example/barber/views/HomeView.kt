@@ -23,10 +23,11 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.barber.R
 
 @Composable
-fun HomeView(modifier: Modifier = Modifier) {
+fun HomeView(navController: NavHostController) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.BottomCenter
@@ -47,7 +48,7 @@ fun HomeView(modifier: Modifier = Modifier) {
                 modifier = Modifier
                     .width(144.dp)
                     .height(48.dp),
-                onClick = { /*TODO*/ }
+                onClick = { navController.navigate("Login") }
             ) {
                 Text(text = "Login")
             }
@@ -56,7 +57,7 @@ fun HomeView(modifier: Modifier = Modifier) {
                 modifier = Modifier
                     .width(144.dp)
                     .height(48.dp),
-                onClick = { /*TODO*/ }
+                onClick = { navController.navigate("Register") }
             ) {
                 Text(text = "Register")
             }
@@ -67,9 +68,4 @@ fun HomeView(modifier: Modifier = Modifier) {
             color = Color.White
         )
     }
-}
-@Preview
-@Composable
-fun HomePreview() {
-    HomeView()
 }
