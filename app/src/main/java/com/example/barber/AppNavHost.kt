@@ -1,5 +1,7 @@
 package com.example.barber
 
+import androidx.compose.animation.*
+import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -19,16 +21,28 @@ fun AppNavHost(
     NavHost(
         modifier = modifier,
         navController = navController,
-        startDestination = startDestination
+        startDestination = startDestination,
     ) {
-        composable(route = Screens.Home.toString()) {
-            HomeUserView()
-            //HomeView(navController)
+        composable(
+            route = Screens.Home.toString(),
+            enterTransition = { fadeIn(animationSpec = tween(2000))},
+            exitTransition = { fadeOut(animationSpec = tween(2000)) }
+        ) {
+            //HomeUserView()
+            HomeView(navController)
         }
-        composable(route = Screens.Login.toString()) {
+        composable(
+            route = Screens.Login.toString(),
+            enterTransition = { fadeIn(animationSpec = tween(2000))},
+            exitTransition = { fadeOut(animationSpec = tween(2000)) }
+        ) {
             LoginView(navController)
         }
-        composable(route = Screens.Register.toString()) {
+        composable(
+            route = Screens.Register.toString(),
+            enterTransition = { fadeIn(animationSpec = tween(2000))},
+            exitTransition = { fadeOut(animationSpec = tween(2000)) }
+        ) {
             RegisterView(navController)
         }
     }
