@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.barber.views.HomeUserView
 import com.example.barber.views.HomeView
 import com.example.barber.views.LoginView
 import com.example.barber.views.RegisterView
@@ -21,7 +22,8 @@ fun AppNavHost(
         startDestination = startDestination
     ) {
         composable(route = Screens.Home.toString()) {
-            HomeView(navController)
+            HomeUserView()
+            //HomeView(navController)
         }
         composable(route = Screens.Login.toString()) {
             LoginView(navController)

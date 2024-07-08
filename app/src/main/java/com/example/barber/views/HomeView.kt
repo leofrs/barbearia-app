@@ -36,7 +36,7 @@ fun HomeView(navController: NavHostController) {
             modifier = Modifier.fillMaxSize(),
             painter = painterResource(id = R.drawable.background),
             contentDescription = "Imagem de fundo",
-            contentScale = ContentScale.FillHeight,
+            contentScale = ContentScale.Crop,
             )
 
         Column(

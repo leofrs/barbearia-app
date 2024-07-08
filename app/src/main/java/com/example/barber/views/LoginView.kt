@@ -95,7 +95,7 @@ fun LoginView(navController: NavHostController) {
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     focusedBorderColor = White,
-                    unfocusedBorderColor = Black
+                    unfocusedBorderColor = Blue
                 )
             )
             Spacer(modifier = Modifier.height(16.dp))
@@ -105,13 +105,13 @@ fun LoginView(navController: NavHostController) {
                 label = {
                     Text(
                         text = "Senha",
-                        color = Color.Black
+                        color = White
                     )
                 },
                 placeholder = {
                     Text(
                         text = "Insira sua senha",
-                        color = Color.Black
+                        color = White
                     )
                 },
                 maxLines = 1,
@@ -120,7 +120,7 @@ fun LoginView(navController: NavHostController) {
                 visualTransformation = PasswordVisualTransformation(),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     focusedBorderColor = White,
-                    unfocusedBorderColor = Black
+                    unfocusedBorderColor = Blue
                 )
             )
             Spacer(modifier = Modifier.height(16.dp))
