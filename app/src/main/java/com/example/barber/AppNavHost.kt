@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.barber.model.CalendarObject
 import com.example.barber.views.HomeUserView
 import com.example.barber.views.HomeView
 import com.example.barber.views.LoginView
@@ -44,6 +45,13 @@ fun AppNavHost(
             exitTransition = { fadeOut(animationSpec = tween(2000)) }
         ) {
             RegisterView(navController)
+        }
+        composable(
+            route = Screens.HomeUser.toString(),
+            enterTransition = { fadeIn(animationSpec = tween(2000))},
+            exitTransition = { fadeOut(animationSpec = tween(2000)) }
+        ){
+            HomeUserView(calendarList = CalendarObject.calendar)
         }
     }
 }
